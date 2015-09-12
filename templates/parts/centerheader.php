@@ -16,7 +16,7 @@
         <div class="clearfix">
             <div class="col-md-6">
                 <a href="<?php echo BASEURL ?>">
-                    <img class="brand" width="111" height="33" src="/images/Logo.png">
+                    <img class="brand" width="111" height="33" alt="Admin Logo" src="/images/Logo.png">
                 </a>
             </div>
             <div class="col-md-6">
