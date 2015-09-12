@@ -22,8 +22,8 @@ define("DATABASE_USER_PASSWORD","4YQflB1s");
 define("SERVER_EMAIL", "server@florianalexandermoser.ch");
 define("SERVER_EMAIL_PASSWORD", "IJYKC7XO");
 
-define("SERVER_EMAIL_RESPOND_EMAIL", "webmaster@knabenkantorei.ch");
-define("SERVER_EMAIL_RESPOND_NAME", "Knabenkantorei Basel");
+define("SERVER_EMAIL_RESPOND_EMAIL", "info@florianalexandermoser.ch");
+define("SERVER_EMAIL_RESPOND_NAME", "Florian Moser");
 
 define("EMAIL_HOST", "asmtp.mail.hostpoint.ch");
 define("EMAIL_SECURE", "tls");
