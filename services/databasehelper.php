@@ -6,7 +6,7 @@
  * Time: 09:47
  */
 
-include_once $_SERVER['DOCUMENT_ROOT']."/common/configuration.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/common/configuration_censored.php";
 
 function GetDatabaseConnection()
 {
