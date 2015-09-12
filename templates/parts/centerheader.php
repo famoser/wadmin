@@ -15,8 +15,9 @@
     <div class="container">
         <div class="clearfix">
             <div class="col-md-6">
-                <a href="<?php echo BASEURL ?>"><img class="brand" src="/images/Logo.png"></a>
-                <!--<h2 class="brand">WAdmin</h2>-->
+                <a href="<?php echo BASEURL ?>">
+                    <img class="brand" width="111" height="33" src="/images/Logo.png">
+                </a>
             </div>
             <div class="col-md-6">
                 <h2 class="application"><?php echo APPLICATION_TITLE ?></h2>

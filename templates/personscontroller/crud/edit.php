@@ -87,10 +87,10 @@
             <div class="col-md-6">
                 <?php echo GetInput($this->_["obj"], "WakeUpTime", "Zeit", "time"); ?>
             </div>
-
             <div class="col-md-6">
                 <?php echo GetInput($this->_["obj"], "FirstContactDateTime", "Zeit & Datum", "datetime"); ?>
             </div>
+
 
         </div>
 

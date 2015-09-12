@@ -16,7 +16,9 @@
         <div class="container">
             <div class="clearfix">
                 <div class="col-md-3">
-                    <a href="<?php echo BASEURL ?>"><img class="brand" src="/images/Logo.png"></a>
+                    <a href="<?php echo BASEURL ?>">
+                        <img class="brand" width="111" height="33" src="/images/Logo.png">
+                    </a>
                     <ul class="tiles menu-toggle">
                         <li>
                             <a href="#">
@@ -46,4 +48,4 @@
     <div id="tab-content-slider">
         <div class="container">
             <div id="tab-content" class="clearfix">
-                <?php include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/messagetemplate.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/messagetemplate.php"; ?>

@@ -19,8 +19,6 @@
     <meta name="description" content="<?php echo $this->page_description; ?>">
 
     <link href="/css/minified.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/fonts.css" rel="stylesheet" type="text/css">
-    <link href="/css/styles.css?V1" rel="stylesheet" type="text/css">
 
     <!-- generate at http://www.favicon-generator.org/ -->
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">

@@ -52,6 +52,7 @@ class GenericCrudView extends GenericView
             include $_SERVER['DOCUMENT_ROOT'] . "/templates/" . $this->controller . "controller/" . $this->folder . $this->mode . ".php";
         }
         $output = ob_get_contents();
+        $output = sanitize_output($output);
         ob_end_clean();
 
         return $output;
