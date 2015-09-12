@@ -1,0 +1,20 @@
+changes to be done:
+	- GenricService
+	- function OuputMessage(), z. B. in edit user echo $this->_["user"]
+	- replace: 
+.filetile {
+    width: 150px;
+    height: 140px;
+    text-align: center;
+    opacity: 1;
+    color: #e7e7e7;
+    background: #4c4c4c;
+    float: left;
+    margin-right: 10px;
+}
+.fileexports {
+	margin: 5px;
+	margin-bottom: 40px;
+}
+
+	- replace cancel with bin (flaticons) where it fits

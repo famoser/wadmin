@@ -1,0 +1,642 @@
+﻿body {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /* scrollbar fix */
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 30px;
+        line-height: 41px;
+    }
+
+    .nav-tabs {
+        margin-bottom: 20px;
+    }
+}
+
+#tab-content {
+    left: 25px;
+}
+
+.shifter {
+    position: absolute;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.ajax-loading-image {
+    width: 20px;
+}
+
+/*Bootstrap color:
+    @brand-primary: #337ab7;    blue
+    @brand-success: #5cb85c;    green
+    @brand-info:    #5bc0de;    light blue
+    @brand-warning: #f0ad4e;    orange
+    @brand-danger:  #d9534f;    red
+    
+    
+    */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5bc0de;
+    border-color: #46b8da;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #337ab7;
+    border-color: #2e6da4;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/*ProductionColors*/
+body.production #loadingbar {
+    background-color: #9FB1B7;
+}
+
+body.production div.navbar {
+    background-color: #079151;
+    border-color: #9FB1B7;
+    border-bottom-width: 2px;
+}
+
+body.production .navbar .navbar-nav > li.active a {
+    background-color: rgba(7, 0, 81, 0.2);
+}
+
+body.production .navbar .navbar-nav > li > a {
+    color: white;
+}
+
+body.production .navbar .navbar-nav > li > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*AbnahmeColors*/
+body.abnahme #loadingbar {
+    background-color: #6C9AA3;
+}
+
+body.abnahme div.navbar {
+    background-color: #23508C;
+    border-color: #6C9AA3;
+    border-bottom-width: 2px;
+}
+
+body.abnahme .navbar .navbar-nav > li.active a {
+    background-color: rgba(7, 0, 81, 0.2);
+}
+
+body.abnahme .navbar .navbar-nav > li > a {
+    color: white;
+}
+
+body.abnahme .navbar .navbar-nav > li > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*testingcolors*/
+body.testing #loadingbar {
+    background-color: #6C9AA3;
+}
+
+body.testing div.navbar {
+    background-color: #2E4B6B;
+    border-color: #6C9AA3;
+    border-bottom-width: 2px;
+}
+
+body.testing .navbar .navbar-nav > li.active a {
+    background-color: rgba(100, 200, 200, 0.2);
+}
+
+body.testing .navbar .navbar-nav > li > a {
+    color: white;
+}
+
+body.testing .navbar .navbar-nav > li > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+a.glyphicon-links {
+    float: right;
+    font-size: 20px;
+    margin-top: -4px;
+}
+
+div.row {
+    margin-bottom: 20px;
+}
+
+div.row h1 {
+    margin-top: 10px;
+}
+
+.sortable thead tr th {
+    cursor: pointer;
+}
+
+.sortable thead tr th.sorting-asc:after {
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 1px;
+    content: "\e113";
+}
+
+.sortable thead tr th.sorting-desc:after {
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 3px;
+    content: "\e114";
+}
+
+table thead tr th.buttons {
+    cursor: default;
+}
+
+table thead tr th.buttons.large {
+    width: 269px;
+}
+
+table thead tr th.buttons.standart {
+    width: 200px;
+}
+
+table thead tr th.buttons.historyeditdelete {
+    width: 201px;
+}
+
+table thead tr th.buttons.detailsedit {
+    width: 134px;
+}
+
+table thead tr th.buttons.historyedit {
+    width: 135px;
+}
+
+table thead tr th.buttons.download {
+    width: 56px;
+}
+
+table thead tr th.buttons.createreportforipad {
+    width: 156px;
+}
+
+table thead tr th.buttons.edit {
+    width: 66px;
+}
+
+table thead tr th.buttons.editdelete {
+    width: 132px;
+}
+
+table.equalize thead tr th:nth-child(1) {
+    width: 55%;
+}
+
+.plot {
+    height: 300px;
+}
+
+.right {
+    float: right;
+}
+
+.refreshbutton {
+    cursor: pointer;
+}
+
+.thumbnail a > img.refreshbuttonimage {
+    display: inline;
+}
+
+.nav-tabs > li.active > a:hover {
+    cursor: url("../images/reloadcursor.PNG"), auto;
+    cursor: default;
+}
+
+#refresh-page-button {
+    position: relative;
+    top: -66px;
+    float: right;
+}
+
+#refresh-page-button a {
+    float: right;
+    font-size: 37px;
+    margin-bottom: -67px;
+}
+
+#refresh-page-button a span {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 46%;
+    -moz-transform-origin: 50% 46%;
+    -o-transform-origin: 50% 46%;
+    transform-origin: 50% 46%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
+#loadingbar {
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: 0px;
+    z-index: 1400;
+    margin-left: -10px;
+    margin-right: 10px;
+    -webkit-transition: width 0.5s ease-out;
+    -moz-transition: width 0.5s ease-out;
+    -o-transition: width 0.5s ease-out;
+    transition: width 0.5s ease-out;
+}
+
+.input-group.search .input-group-btn .btn-group:nth-child(1) {
+    margin-left: 40px;
+}
+
+.input-group.search .input-group-btn .btn-group .btn-group button {
+    height: 46px;
+}
+
+p.searchresult {
+    margin-top: 20px;
+}
+
+.input-group.search .input-group-btn .btn-group label input[type=checkbox] {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 1200px;
+    }
+}
+
+.plotbutton {
+    display: none;
+}
+
+/*Chrome foxus fix*/
+button:focus {
+    outline: 0;
+}
+
+/*Remove Mozilla Firefox Border – Remove Dotted Line Around Link */
+a:active {
+    outline: none !important;
+}
+
+a:focus {
+    -moz-outline-style: none !important;
+    outline: none !important;
+}
+
+ul li:active {
+    outline: none !important;
+}
+
+ul li:focus {
+    -moz-outline-style: none !important;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .btn-group > .btn:focus {
+    outline: none !important;
+}
+
+.input-group-btn > .btn:focus {
+    outline: none !important;
+}
+
+.col-md-10 input, select {
+    max-width: none;
+    width: 100%;
+}
+
+.downloadbutton, .copybutton, .clipboardbutton, .inlineinputbutton {
+    background-color: lightgray;
+}
+
+.input-group.statisticbuttons {
+    margin-bottom: 20px;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group {
+    margin-left: 20px;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group input[type=radio] {
+    display: none;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group input[type=date] {
+    width: 190px;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group input[type=date]:first-child {
+    border-radius: 0px;
+    margin-right: -1px;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group input[type=date]:last-child {
+    margin-left: -1px;
+}
+
+.input-group.statisticbuttons .input-group-btn .btn-group .btn-group input[type=number] {
+    width: 130px;
+    border-radius: 5px;
+}
+
+.lazyload, .lazyloaded {
+    display: none;
+}
+
+a.navigationbutton {
+    text-decoration: none;
+}
+
+div.barchart {
+    position: absolute;
+    bottom: 18px;
+    height: 0px;
+    -webkit-transition: height 2s ease-out;
+    -moz-transition: height 2s ease-out;
+    -o-transition: height 2s ease-out;
+    transition: height 2s ease-out;
+}
+
+span.barchartlabel {
+    position: absolute;
+    bottom: 20px;
+    -webkit-transition: bottom 2s ease-out;
+    -moz-transition: bottom 2s ease-out;
+    -o-transition: bottom 2s ease-out;
+    transition: bottom 2s ease-out;
+}
+
+.topnumberscounter {
+    border: 2px solid rgb(51, 122, 183);
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 60px;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    vertical-align: middle;
+    width: 160px;
+}
+
+.form-control.check-box {
+    cursor: pointer;
+    margin: 0px;
+}
+
+.form-control.check-box {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #eeeeee;
+}
+
+#topbar {
+    font-size: 18px;
+}
+
+#topbar.fixed {
+    position: fixed;
+    top: 0px;
+    padding: 7px;
+    height: 54px;
+    border-radius: 5px;
+    left: 18px;
+    background-color: white;
+    width: calc(100% - 36px);
+    z-index: 1000;
+}
+
+#error-content.fixed-topbar {
+    margin-top: 70px;
+}
+
+#caching-button {
+    top: -66px;
+    float: right;
+    left: -50px;
+    height: 0px;
+}
+
+.onoffswitch {
+    position: relative;
+    width: 157px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    position: absolute;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 26px;
+    font-size: 16px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.onoffswitch-inner:before {
+    content: "\00a0 caching enabled";
+    padding-left: 7px;
+    background-color: #5cb85c;
+    color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "\00a0 caching disabled";
+    padding-right: 7px;
+    background-color: #d9534f;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+    height: 30px;
+}
+
+.btn-group.tworadiobuttons {
+    padding-left: 15px;
+}
+
+.btn-group.tworadiobuttons input {
+    display: none;
+}
+
+.btn-group.tworadiobuttons label {
+    width: 50%;
+}
+
+.form-horizontal .control-label.col-md-12 {
+    text-align: left;
+}
+
+.col-md-12 input, textarea, select {
+    max-width: none;
+    width: 100%;
+}
+
+.col-md-12 textarea {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.col-md-12 textarea.expandonclick {
+    height: 34px;
+    -webkit-transition: height 0.5s ease-in-out;
+    -moz-transition: height 0.5s ease-in-out;
+    -o-transition: height 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out;
+}
+
+.col-md-12 textarea.expanded {
+    height: auto;
+    min-height: 200px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.searchinput {
+    max-width: 280px;
+}
+
+.clipboardbutton, .inlineinputbutton {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
+.noneditable {
+    background-color: #fafafa;
+}
+
+.form-control.locked {
+    border: none;
+    box-shadow: none;
+}
+
+.btn-right {
+    float: right;
+}
+
+.btn-left {
+    float: left;
+}
+
+/*firefox fix to not display dotted corners around buttons etc*/
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
