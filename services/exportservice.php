@@ -6,11 +6,9 @@
  * Time: 10:40
  */
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/libraries/PHPExcel/IOFactory.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/userservice.php";
-
-function DownloadUsersAndExit()
+function DownloadPersonsAndExit()
 {
+    IncludeIfNecessary("/libraries/PHPExcel/IOFactory.php");
     $instance = PHPExcel_IOFactory::load($_SERVER['DOCUMENT_ROOT'] . "/export/exporttemplates/persons.xlsx");
 
     $users = GetAllOrderedBy("persons", "LastName, FirstName", false);

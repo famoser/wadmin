@@ -5,7 +5,6 @@
  * Date: 23.05.2015
  * Time: 13:51
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/adminservice.php";
 
 class MainController extends ControllerBase
 {

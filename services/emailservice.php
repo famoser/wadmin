@@ -6,7 +6,8 @@
  * Time: 15:11
  */
 
-function SendMail($to, $betreff, $message)
+function SendMail($to, $toname, $betreff, $message)
 {
-    return mail($to, $betreff, $message, "Content-Type: text; charset=UTF-8");
+    IncludeIfNecessary("/libraries/PHPMailer.php");
+    return SendEmailFromServer($to, $toname, $betreff, $message);
 }

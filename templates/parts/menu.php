@@ -49,6 +49,8 @@
         <ul class="oneline-nav">
             <?php
             foreach ($this->submenu as $menuitem) {
+                if ($menuitem["href"] != "" && !str_endsWith($menuitem["href"], "/"))
+                    $menuitem["href"] .= "/";
                 echo '<li ' . GetClassesForMenuItem($this, array($this->params[0], $menuitem["href"])) . '>
                             <a href="' . $this->controller . "/" . $menuitem["href"] . '">' . $menuitem["content"] . '</a>
                       </li>';

@@ -6,7 +6,6 @@
  * Time: 11:55
  *
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/importservice.php";
 
 class ImportController extends ControllerBase
 {

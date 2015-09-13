@@ -19,22 +19,16 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/classes/models/*.php") as $filename)
     include_once $filename;
 }
 
+foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/services/*.php") as $filename) {
+    include_once $filename;
+}
+
 foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/view/*.php") as $filename) {
     include_once $filename;
 }
 
-/* generics & commons */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/view/messageview.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/view/genericcrudview.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/view/genericview.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/genericservice.php";
+/* commons */
 include_once $_SERVER['DOCUMENT_ROOT'] . "/templates/partcreator.php";
-
-
-if (!str_endsWith($_SERVER['REQUEST_URI'], "/")) {
-    header("Location: " . $_SERVER['REQUEST_URI'] . "/");
-    exit;
-}
 
 session_start();
 
@@ -48,7 +42,8 @@ $arr = explode("/", $_SERVER['REQUEST_URI']);
 //get controller
 $params = array();
 for ($i = 1; $i < count($arr); $i++) {
-    $params[] = $arr[$i];
+    if ($arr[$i] != "")
+        $params[] = $arr[$i];
 }
 
 $allowedParams = [
