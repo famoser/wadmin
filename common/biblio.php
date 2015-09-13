@@ -91,10 +91,18 @@ function CheckPassword($passwd)
     return true;
 }
 
-function GetClassesForMenuItem($view, $params = null)
+function GetClassesForMenuItem($view, $params = null,$isSubmenu = false)
 {
     if ($params == null || count($params) == 0 || $view->params == null || count($view->params) == 0)
         return "";
+
+    //clean $params
+    $temp = $params;
+    $params = array();
+    foreach ($temp as $val) {
+        if ($val != "")
+            $params[] = $val;
+    }
 
     $isSamePage = true;
     for ($i = 0; $i < count($params); $i++) {
@@ -107,6 +115,8 @@ function GetClassesForMenuItem($view, $params = null)
     $classes = "active";
     if (count($params) == count($view->params))
         $classes .= " active-page";
+    else if ($isSubmenu)
+        return "";
 
     return ' class="' . $classes . '" ';
 }

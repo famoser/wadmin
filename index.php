@@ -45,6 +45,8 @@ for ($i = 1; $i < count($arr); $i++) {
     if ($arr[$i] != "")
         $params[] = $arr[$i];
 }
+if (count($params) == 0)
+    $params[0] = "";
 
 $allowedParams = [
     "persons",

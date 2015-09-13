@@ -49,10 +49,12 @@
         <ul class="oneline-nav">
             <?php
             foreach ($this->submenu as $menuitem) {
-                if ($menuitem["href"] != "" && !str_endsWith($menuitem["href"], "/"))
-                    $menuitem["href"] .= "/";
-                echo '<li ' . GetClassesForMenuItem($this, array($this->params[0], $menuitem["href"])) . '>
-                            <a href="' . $this->controller . "/" . $menuitem["href"] . '">' . $menuitem["content"] . '</a>
+                $href = $menuitem["href"];
+                if ($href != "" && !str_endsWith($href, "/"))
+                    $href .= "/";
+
+                echo '<li ' . GetClassesForMenuItem($this, array($this->params[0], $menuitem["href"]), true) . '>
+                            <a href="' . $this->controller . "/" . $href . '">' . $menuitem["content"] . '</a>
                       </li>';
             }
             ?>

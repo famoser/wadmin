@@ -138,7 +138,7 @@ function Insert($table, $arr)
     $params = CleanUpGenricArray($arr);
     $stmt = $db->prepare('INSERT INTO ' . $table . ' ' . ConstructMiddleSQL("insert", $params, $excludedArray));
 
-    return $stmt->execute($arr);
+    return $stmt->execute($params);
 }
 
 function Update($table, $arr)

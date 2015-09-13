@@ -8,9 +8,9 @@
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/crudheader.php"; ?>
 
-    <form action="persons/<?php echo $this->_['mode'] ?>/<?php echo GetValue($this->_['obj'], "Id") ?>/" method="post">
+    <form action="persons/<?php echo $this->link ?>/<?php echo GetValue($this->_['obj'], "Id") ?>/" method="post">
 
-        <input type="hidden" name="<?php echo $this->_['mode'] ?>" value="true"/>
+        <input type="hidden" name="<?php echo $this->link ?>" value="true"/>
 
         <div class="clearfix">
             <div class="col-md-6">
