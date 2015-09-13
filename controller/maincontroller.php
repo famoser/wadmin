@@ -36,7 +36,7 @@ class MainController extends ControllerBase
         if (count($this->params[0]) < 2 && $this->params[0] == "") {
             if ($user !== false) {
                 DoLog("Sie sind eingeloggt, und wurden automatisch weitergeleitet");
-                header("Location: " . BASEURL . AFTER_LOGIN_PAGE);
+                header("Location: " . BASEURL . AFTER_LOGIN_PAGE. "/");
                 exit;
             }
 
@@ -48,7 +48,7 @@ class MainController extends ControllerBase
                     if ($personal != "")
                         $personal = ", ".$personal;
                     DoLog('Willkommen'.$personal.'!');
-                    header("Location: " . BASEURL . AFTER_LOGIN_PAGE);
+                    header("Location: " . BASEURL . AFTER_LOGIN_PAGE. "/");
                     exit;
                 } else {
                     DoLog("Login fehlgeschlagen", LOG_LEVEL_USER_ERROR);
@@ -72,7 +72,7 @@ class MainController extends ControllerBase
                             if (AddOrUpdate("admins", $params)) {
                                 DoLog("Das Passwort wurde erfolgreich geändert");
                                 SetActiveUser(GetById("admins", $admin->Id));
-                                header("Location: " . BASEURL . AFTER_LOGIN_PAGE);
+                                header("Location: " . BASEURL . AFTER_LOGIN_PAGE. "/");
                                 exit;
                             } else
                                 DoLog("Das Passwort konnte nicht geändert werden", LOG_LEVEL_SYSTEM_ERROR);

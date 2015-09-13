@@ -8,6 +8,7 @@
 ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/_headerPart.php"; ?>
     <body>
+    <div class="mobile-container">
     <div id="loadingbar"></div>
 
     <a class="arrow-top"></a>

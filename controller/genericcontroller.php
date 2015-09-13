@@ -15,13 +15,14 @@ class GenericController extends ControllerBase
     private $orderby = null;
     private $replaces = null;
     private $controllerreplaces = null;
+    private $submenu = null;
 
     /**
      * Konstruktor, erstellet den Controller.
      *
      * @param Array $request Array aus $_GET & $_POST.
      */
-    public function __construct($request, $params, $table, $object, $orderBy, $replaces = null, $controllerreplaces = null)
+    public function __construct($request, $params, $table, $object, $orderBy, $replaces = null, $controllerreplaces = null, $submenu = null)
     {
         $this->request = $request;
         $this->params = $params;
@@ -36,6 +37,7 @@ class GenericController extends ControllerBase
         $this->orderby = $orderBy;
         $this->replaces = $replaces;
         $this->controllerreplaces = $controllerreplaces;
+        $this->submenu = $submenu;
     }
 
     function IsReplaced($targetValue)
@@ -54,7 +56,7 @@ class GenericController extends ControllerBase
     public function Display()
     {
         if (count($this->params) == 0 || $this->params[0] == "" || $this->IsReplaced("")) {
-            $view = new GenericView($this->table, array());
+            $view = new GenericView($this->table, $this->submenu);
             $view->assign($this->table, GetAllOrderedBy($this->table, $this->orderby));
         } else {
             $view = new GenericCrudView($this->params[0], $this->replaces, $this->table);

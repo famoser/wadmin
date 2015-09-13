@@ -38,7 +38,6 @@ function GetInput($obj, $prop, $display = null, $type = "text", $special = null,
             if ($val != null) {
                 if ($type == "date") {
                     $date = DateTime::createFromFormat(DATE_FORMAT_DATABASE, $val);
-                    echo $date->getOffset();
                     if ($date != false && $val != null)
                         $html .= ' value="' . $date->format(DATE_FORMAT_INPUT) . '"';
                 } else if ($type == "datetime") {
@@ -47,7 +46,6 @@ function GetInput($obj, $prop, $display = null, $type = "text", $special = null,
                         $html .= ' value="' . $date->format(DATETIME_FORMAT_INPUT) . '"';
                 } else if ($type == "time") {
                     $date = DateTime::createFromFormat(TIME_FORMAT_DATABASE, $val);
-                    echo $date->getOffset();
                     if ($date != false)
                         $html .= ' value="' . $date->format(TIME_FORMAT_INPUT) . '"';
                 } else {

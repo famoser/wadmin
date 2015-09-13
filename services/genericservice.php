@@ -25,7 +25,7 @@ function GetAllByCondition($table, $condition, $addRealtionships = true, $orderB
 
     $db = GetDatabaseConnection();
     $stmt = $db->prepare('SELECT * FROM ' . $table . ConstructConditionSQL($condition) . $orderBy . " " . $additionalSql);
-    $stmt->execute();
+    $stmt->execute($condition);
 
     $result = $stmt->fetchAll(PDO::FETCH_CLASS, $model);
     if ($addRealtionships) {
