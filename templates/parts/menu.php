@@ -11,7 +11,7 @@
         <ul class="tiles">
             <li <?php echo GetClassesForMenuItem($this, array("persons")); ?>>
                 <a href="persons/">
-                    <span class="flaticon-profile29" aria-hidden="true"></span>Users
+                    <span class="flaticon-profile29" aria-hidden="true"></span>Persons
                 </a>
             </li>
             <li <?php echo GetClassesForMenuItem($this, array("export")); ?>>
