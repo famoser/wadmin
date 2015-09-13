@@ -42,12 +42,7 @@
     <script type="text/javascript">
         /* Fix IE Mobile Responsive Design */
         !function(){if("-ms-user-select"in document.documentElement.style&&navigator.userAgent.match(/IEMobile\/10\.0/)){var e=document.createElement("style");e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.getElementsByTagName("head")[0].appendChild(e)}}();
-        window.onload = function () {
-            if(screen.width <= 400) {
-                var mvp = document.getElementById('viewport');
-                mvp.setAttribute('content','width=400');
-            }
-        }
+        window.onload=function(){if(screen.width<=400){var t=document.getElementById("viewport");t.setAttribute("content","width=400")}};
     </script>
 
 
