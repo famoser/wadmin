@@ -14,7 +14,7 @@ class MessageView extends ViewBase
     protected $httpHeader;
     protected $showLink;
 
-    public function __construct($message, $loglevel, $httpCode = null, $showLink = true)
+    public function __construct($message, $loglevel = LOG_LEVEL_INFO, $httpCode = null, $showLink = true)
     {
         $this->message = $message;
         $this->loglevel = $loglevel;

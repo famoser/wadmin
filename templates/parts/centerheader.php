@@ -10,6 +10,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/_headerPart.php"; ?>
 
 <body>
+<div class="mobile-container">
 <div id="loadingbar"></div>
 <header class="no-menu">
     <div class="container">

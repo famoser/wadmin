@@ -22,7 +22,7 @@ class PersonsController extends ControllerBase
     {
         $this->request = $request;
         $this->params = $params;
-        $this->genericController = new GenericController($this->request,$this->params,"persons", "Person", "LastName, FirstName", array("add" => "edit"));
+        $this->genericController = new GenericController($this->request,$this->params,"persons", "Person", "LastName, FirstName", array("add" => "edit"), null, $this->getMenu());
     }
 
     function getMenu()
@@ -56,6 +56,9 @@ class PersonsController extends ControllerBase
                 return $this->genericController->Display();
             } else if ($this->params[0] == "delete" && isset($this->params[1]) && is_numeric($this->params[1])) {
                 return $this->genericController->Display();
+            } else if ($this->params[0] == "walter") {
+                $view = new GenericView("persons", $this->getMenu());
+                $view->assign("persons", GetAllByCondition("persons",array("FirstName" => "Walter")));
             }
         }
 

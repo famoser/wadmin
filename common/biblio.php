@@ -6,6 +6,11 @@
  * Time: 10:10
  */
 
+function IncludeIfNecessary($path)
+{
+    include_once $_SERVER['DOCUMENT_ROOT'].$path;
+}
+
 function RemoveFirstEntryInArray($arr)
 {
     unset($arr[0]);
@@ -86,10 +91,18 @@ function CheckPassword($passwd)
     return true;
 }
 
-function GetClassesForMenuItem($view, $params = null)
+function GetClassesForMenuItem($view, $params = null,$isSubmenu = false)
 {
     if ($params == null || count($params) == 0 || $view->params == null || count($view->params) == 0)
         return "";
+
+    //clean $params
+    $temp = $params;
+    $params = array();
+    foreach ($temp as $val) {
+        if ($val != "")
+            $params[] = $val;
+    }
 
     $isSamePage = true;
     for ($i = 0; $i < count($params); $i++) {
@@ -102,6 +115,8 @@ function GetClassesForMenuItem($view, $params = null)
     $classes = "active";
     if (count($params) == count($view->params))
         $classes .= " active-page";
+    else if ($isSubmenu)
+        return "";
 
     return ' class="' . $classes . '" ';
 }
@@ -163,4 +178,22 @@ function sanitize_output($buffer) {
     $buffer = str_replace(array_map(function($el){ return '<pre>'.$el.'</pre>'; }, array_keys($foundPre[0])), $foundPre[0], $buffer);
 
     return $buffer;
+}
+
+function GetDatabaseConnection()
+{
+    IncludeIfNecessary("/common/configuration.php");
+    $db = new PDO("mysql:host=" . DATABASE_HOST .";dbname=" . DATABASE_NAME . ";charset=utf8",DATABASE_USER,DATABASE_USER_PASSWORD);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    return $db;
+}
+
+function str_startsWith($haystack, $needle) {
+    // search backwards starting from haystack length characters from the end
+    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
+}
+function str_endsWith($haystack, $needle) {
+    // search forward starting from end minus needle length characters
+    return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== FALSE);
 }

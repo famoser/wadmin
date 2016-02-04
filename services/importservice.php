@@ -5,11 +5,10 @@
  * Date: 04.06.2015
  * Time: 21:28
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/libraries/PHPExcel/IOFactory.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/userservice.php";
 
 function ImportPersons($execute, $filename)
 {
+    IncludeIfNecessary("/libraries/PHPExcel/IOFactory.php");
     $persons = GetPersonsFromExcel($filename);
 
     $ids = GetPropertyByCondition("persons", null, "Id");

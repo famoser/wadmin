@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/header.php"; ?>
     <?php
     }
     else { ?>
-    <div class="row no-gutters content">
+    <div class="row no-gutters content clearfix">
         <?php
         }
         include $_SERVER['DOCUMENT_ROOT'] . "/templates/parts/messagetemplate.php"; ?>

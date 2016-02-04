@@ -25,7 +25,7 @@ function GetAllByCondition($table, $condition, $addRealtionships = true, $orderB
 
     $db = GetDatabaseConnection();
     $stmt = $db->prepare('SELECT * FROM ' . $table . ConstructConditionSQL($condition) . $orderBy . " " . $additionalSql);
-    $stmt->execute();
+    $stmt->execute($condition);
 
     $result = $stmt->fetchAll(PDO::FETCH_CLASS, $model);
     if ($addRealtionships) {
@@ -138,7 +138,7 @@ function Insert($table, $arr)
     $params = CleanUpGenricArray($arr);
     $stmt = $db->prepare('INSERT INTO ' . $table . ' ' . ConstructMiddleSQL("insert", $params, $excludedArray));
 
-    return $stmt->execute($arr);
+    return $stmt->execute($params);
 }
 
 function Update($table, $arr)

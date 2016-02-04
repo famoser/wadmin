@@ -6,7 +6,6 @@
  * Time: 11:55
  *
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/exportservice.php";
 
 class ExportController extends ControllerBase
 {
@@ -39,7 +38,7 @@ class ExportController extends ControllerBase
         {
             $params = RemoveFirstEntryInArray($this->params);
             if ($params[0] == "excel")
-                DownloadUsersAndExit();
+                DownloadPersonsAndExit();
             else if ($params[0] == "database")
                 DownloadDatabaseAndExit();
         }

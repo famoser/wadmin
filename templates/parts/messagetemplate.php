@@ -9,7 +9,7 @@
 <?php $logs = GetLog();
 if ($logs != null) {
     foreach ($logs as $log) { ?>
-        <div class="col-md-12 content <?php echo $log["class"]; ?>">
+        <div class="col-md-12 content message <?php echo $log["class"]; ?>">
             <div class="col-md-11">
                 <?php echo $log["message"]; ?>
             </div>

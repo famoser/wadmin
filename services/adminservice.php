@@ -5,10 +5,6 @@
  * Date: 23.05.2015
  * Time: 14:01
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/userservice.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/adminservice.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/emailservice.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/classes/models/adminmodel.php";
 
 function TryLogin($Email, $Pass)
 {
@@ -35,8 +31,10 @@ function AddAdmin($params)
     }
 
     $params["AuthHash"] = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
-    if (AddOrUpdate("admins", $params) > 0) {
-        return SendMail($params["Email"], "Admin der Froburger Addressverwaltung", "Sie wurden gerade als admin in der Addressverwaltung der Froburger hinzugefügt. Folgen Sie diesem Link, um die Registrierung abzuschliessen: " . BASEURL . "activateAccount/" . $params["AuthHash"]);
+    $res = AddOrUpdate("admins", $params);
+    if ($res !== false) {
+        if (SendMail($params["Email"], null, APPLICATION_TITLE, "Sie wurden gerade als admin auf ".BASEURL." (".APPLICATION_TITLE.") hinzugefügt. Folgen Sie diesem Link, um die Registrierung abzuschliessen: " . BASEURL . "activateAccount/" . $params["AuthHash"]))
+            return $res;
     }
     DoLog("Admin konnte nicht aktualisiert werden", LOG_LEVEL_SYSTEM_ERROR);
     return false;
@@ -49,8 +47,9 @@ function ResetAdminPassByEmail($email)
         $params = array();
         $params["Id"] = $admin->Id;
         $params["AuthHash"] = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
-        if (AddOrUpdate("admins", $params))
-            return SendMail($email, "Passwort zurückgesetzt", "Ihr Passwort der Addressverwaltung der Froburger wurde zurückgesetzt. Folgen Sie diesem Link, um die Registrierung abzuschliessen: " . BASEURL . "activateAccount/" . $params["AuthHash"] . "
+        $res = AddOrUpdate("admins", $params);
+        if ($res !== false)
+            return SendMail($email, $admin->GetIdentification(), "Passwort zurückgesetzt", "Ihr Passwort auf ".BASEURL." (".APPLICATION_TITLE.") wurde zurückgesetzt. Folgen Sie diesem Link, um die Registrierung abzuschliessen: " . BASEURL . "activateAccount/" . $params["AuthHash"] . "
 Wenn Sie diese E-Mail nicht angefordert haben, können Sie sie ignorieren");
     }
     return false;

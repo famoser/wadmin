@@ -10,7 +10,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/view/genericview.php";
 class GenericCrudView extends GenericView
 {
     protected $link;
-    protected $originmode;
     protected $folder;
     protected $replaces;
 

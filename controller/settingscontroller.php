@@ -5,7 +5,6 @@
  * Date: 25.05.2015
  * Time: 10:33
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . "/services/adminservice.php";
 
 class SettingsController extends ControllerBase
 {
@@ -63,12 +62,12 @@ class SettingsController extends ControllerBase
 
                     $res = AddAdmin($this->request);
 
-                    if ($res) {
+                    if ($res !== false) {
                         $obj = GetById("admins", $res);
                         if ($obj !== false) {
-                            DoLog("Admin wurde hinzugefügt, E-Mail wurde versendet.", LOG_LEVEL_INFO);
+                            DoLog("Admin wurde hinzugefügt, E-Mail wurde versendet.");
                         } else {
-                            DoLog("Admin wurde hinzugefügt, E-Mail wurde versendet.", LOG_LEVEL_SYSTEM_ERROR);
+                            DoLog("Admin konnte nicht hinzugefügt werden.", LOG_LEVEL_SYSTEM_ERROR);
                         }
                     }
                 }
@@ -78,7 +77,7 @@ class SettingsController extends ControllerBase
                 if (isset($this->request["delete"]) && $this->request["delete"] == "true") {
                     $res = DeleteById("admins", $this->params[1]);
                     if ($res) {
-                        $view = new MessageView("Admin wurde gelöscht", LOG_LEVEL_INFO);
+                        $view = new MessageView("Admin wurde gelöscht");
                     } else
                         $view = new MessageView("Admin konnte nicht gelöscht werden.", LOG_LEVEL_SYSTEM_ERROR);
                 } else {
